@@ -26,7 +26,10 @@ return {
             require("luasnip.loaders.from_snipmate").lazy_load({
                 paths                           = { vim.fn.stdpath("config") .. "/bin/snippets" }
             })
-
+            require("luasnip.loaders.from_lua").lazy_load({ 
+                paths                           = { vim.fn.stdpath("config") .. "/bin/node_snippets/" } 
+            })
+            
             -- Load standard community snippets (friendly-snippets) as fallback
             require("luasnip.loaders.from_vscode").lazy_load()
 
@@ -177,12 +180,12 @@ return {
 
                 -- Sources (Order determines priority)
                 sources = {
-                    { name = "nvim_lsp"     , group_index = 2 },
-                    { name = "luasnip"      , group_index = 2 },
                     -- { name = "copilot"   , group_index = 2 },
                     -- { name = "cmp_tabnine", group_index = 2 },
+                    { name = "nvim_lsp"     , group_index = 2 },
+                    { name = "luasnip"      , group_index = 2 },
+                    { name = "buffer"       , group_index = 2 },  -- Text in the current Buffer
                     { name = "path"         , group_index = 2 },
-                    { name = "buffer"       , group_index = 2 },
                 },
 
                 -- Experimental Features

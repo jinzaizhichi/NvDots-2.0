@@ -26,4 +26,4 @@
 (("async"    @keyword ) (#set! conceal ""))
 (("or"       @keyword ) (#set! conceal ""))
 (("yield"    @keyword ) (#set! conceal ""))
-; (("not"      @keyword ) (#set! conceal "✗"))
+(("not"      @keyword ) (#set! conceal "✗"))

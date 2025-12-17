@@ -19,20 +19,19 @@ return {
 
         config = function()
             -- ----------------------------------------------------------------------
-            -- 1. UI Setup: Diagnostic Signs
+            -- 1. UI Setup: Diagnostic Signs (Modern API)
             -- ----------------------------------------------------------------------
-            -- Define custom icons for LSP diagnostics in the sign column.
-            local signs = {
-                Error = "",
-                Warn  = "",
-                Hint  = "󰠠",
-                Info  = ""
-            }
-
-            for type, icon in pairs(signs) do
-                local hl = "DiagnosticSign" .. type
-                vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-            end
+            -- Using the new vim.diagnostic.config instead of deprecated sign_define
+            vim.diagnostic.config({
+                signs = {
+                    text = {
+                        [vim.diagnostic.severity.ERROR] = "",
+                        [vim.diagnostic.severity.WARN]  = "",
+                        [vim.diagnostic.severity.HINT]  = "󰠠",
+                        [vim.diagnostic.severity.INFO]  = "",
+                    },
+                },
+            })
 
             -- ----------------------------------------------------------------------
             -- 2. Theme Configuration

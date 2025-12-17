@@ -112,6 +112,9 @@ Toggler.setup = function(user_config)
     for ft, maps in pairs(ft_map) do
         t_ft[ft]                                = create_lookup(maps)
     end
+
+    -- Set the Keymap for usability
+    vim.keymap.set({"n", "v"}, "<leader>t", require("util.toggler").toggle, { desc = "Toggle word" })
 end
 
 -- ==========================================================================

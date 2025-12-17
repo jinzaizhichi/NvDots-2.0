@@ -17,9 +17,6 @@ local opts               = { noremap = true, silent = true }
 local env_status, env    = pcall(require, "config.user_env")
 local env_config         = env_status and env.config or {}
 
--- Load Zen Mode
-pcall(require, "util.zen")
-
 -- ==========================================================================
 -- 2. GENERAL KEYMAPS
 -- ==========================================================================
@@ -97,6 +94,7 @@ map("n" , "Y"           , "y$"                  , { desc = "Yank to end of line"
 -- --------------------------------------------------------------------------
 map("i" , "jk"          , "<Esc>"               , { desc = "Fast Exit Insert" })
 map("i" , "qq"          , "<Esc>"               , { desc = "Fast Exit Insert" })
+map("i" , "QQ"          , "<Esc>"               , { desc = "Fast Exit Insert" })
 map("n" , "U"           , "<C-r>"               , { desc = "Redo"             })
 
 -- ==========================================================================
@@ -187,6 +185,9 @@ end
 -- 4. UTILITIES / COMMANDS
 -- ==========================================================================
 
+-- lua/config/keymaps.lua
+-- map("n", "<leader>?", "<cmd>Keysheet<cr>", { desc = "Open Cheatsheet" })
+
 -- Abbreviations
 vim.cmd([[cnoreab cls Cls]])
 vim.cmd([[cnoreab W w]])
@@ -194,4 +195,4 @@ vim.cmd([[cnoreab W! w!]])
 vim.cmd([[inoreab idate <C-R>=strftime("%b %d %Y %H:%M")<CR>]])
 
 -- Function Keys
-map("n" , "<F1>"        , 'oThis file was created on <C-R>=strftime("%b %d %Y %H:%M")<CR><ESC>' , opts)
+map("n" , "<F1>", 'oThis file was created on <C-R>=strftime("%b %d %Y %H:%M")<CR><ESC>' , opts)

@@ -41,8 +41,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- --------------------------------------------------------------------------
--- 2. Setup Lazy.nvim
+-- 2. Initialize options & Setup Lazy.nvim
 -- --------------------------------------------------------------------------
+-- First require the options so that we can stop the conflicts
+require("config.options")
 require("lazy").setup(
     {
         spec = {
@@ -59,6 +61,10 @@ require("lazy").setup(
         },
         change_detection = {
             notify  = false         -- Don't spam notifications on config change (Options: true, false)
+        },
+        rocks = {
+            enabled   = false,
+            hererocks = false,
         },
         performance = {
             rtp     = {
@@ -100,3 +106,4 @@ require("lazy").setup(
 -- Load core config files after plugins are setup
 require("config.keymaps")
 require("config.autocmds")
+require("util.dash").setup()

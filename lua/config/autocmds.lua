@@ -91,6 +91,12 @@ api.nvim_create_user_command("LuaSnipEdit",
     end, {}
 )
 
+-- Register Cheatsheet Command
+-- api.nvim_create_user_command("Keysheet", 
+--     function()
+--         require("util.keysheet").show()
+--     end, { desc = "Show Keymap Cheatsheet" })
+
 -- Legacy Realtime (Autoread)
 -- --------------------------------------------------------------------------
 -- Forces Neovim to detect file changes on disk immediately
@@ -245,12 +251,18 @@ api.nvim_create_autocmd("BufEnter", {
 --     end,
 -- })
 
--- Starts the Toggler Fucntion
+-- Starts the Toggler Fucntion 
 api.nvim_create_autocmd("InsertEnter", {
     once = true, -- Ensures this only runs the first time you enter Insert mode
     callback = function()
-        local toggler = require("util.toggler") -- Replace with your actual file path
-        toggler.setup(env_config.toggles or {})
-        vim.keymap.set({"n", "v"}, "<leader>t", toggler.toggle, { desc = "Toggle word" })
+        require("util.toggler").setup(env_config.toggles or {})
+    end,
+})
+
+-- Starts the zen Fucntion after BufEnter
+api.nvim_create_autocmd("BufEnter", {
+    once = true, -- Ensures this only runs the first time you enter Insert mode
+    callback = function()
+        require("util.zen")
     end,
 })
