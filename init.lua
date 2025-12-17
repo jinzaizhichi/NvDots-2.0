@@ -26,7 +26,5 @@ vim.g.maplocalleader = env.config.maplocalleader  -- Local leader key (e.g., Bac
 -- Load 'lua/config/lazy.lua' which installs lazy.nvim and loads plugins.
 require("config.lazy")
 
--- TODO: Conceal of different files i.e Lua ft not working
--- TODO: keymap cheatsheet 
 -- FIX: all the multinode snippets not working
 -- TODO: Create a dynamic snippet with multiple options to choose from in a single snippet

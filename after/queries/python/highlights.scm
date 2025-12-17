@@ -1,3 +1,4 @@
+;; extends
 ;; Keywords
 (("if"       @keyword ) (#set! conceal "?"))
 (("elif"     @keyword ) (#set! conceal "¿"))

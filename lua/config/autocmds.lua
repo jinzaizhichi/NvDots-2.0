@@ -91,12 +91,6 @@ api.nvim_create_user_command("LuaSnipEdit",
     end, {}
 )
 
--- Register Cheatsheet Command
--- api.nvim_create_user_command("Keysheet", 
---     function()
---         require("util.keysheet").show()
---     end, { desc = "Show Keymap Cheatsheet" })
-
 -- Legacy Realtime (Autoread)
 -- --------------------------------------------------------------------------
 -- Forces Neovim to detect file changes on disk immediately

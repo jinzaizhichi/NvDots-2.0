@@ -185,9 +185,6 @@ end
 -- 4. UTILITIES / COMMANDS
 -- ==========================================================================
 
--- lua/config/keymaps.lua
--- map("n", "<leader>?", "<cmd>Keysheet<cr>", { desc = "Open Cheatsheet" })
-
 -- Abbreviations
 vim.cmd([[cnoreab cls Cls]])
 vim.cmd([[cnoreab W w]])
