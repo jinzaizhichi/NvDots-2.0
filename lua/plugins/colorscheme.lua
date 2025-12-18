@@ -54,29 +54,50 @@ return {
 					local theme = colors.theme
 					return {
 						-- 1. Editor UI (Transparency & Splits)
-						LineNr       = { bg = "NONE" },
-						CursorLineNr = { bg = "NONE" },
-						SignColumn   = { bg = "NONE" },
-						VertSplit    = { fg = theme.ui.bg_m3, bg = "NONE" },
-						WinSeparator = { fg = theme.ui.bg_m3, bg = "NONE" },
+						LineNr                           = { bg = "NONE" },
+						CursorLineNr                     = { bg = "NONE" },
+						SignColumn                       = { bg = "NONE" },
+						VertSplit                        = { fg = theme.ui.bg_m3, bg = "NONE" },
+						WinSeparator                     = { fg = theme.ui.bg_m3, bg = "NONE" },
 
 						-- 2. LSP Diagnostic Signs (Remove Backgrounds)
-						DiagnosticSignError = { bg = "NONE" },
-						DiagnosticSignWarn  = { bg = "NONE" },
-						DiagnosticSignInfo  = { bg = "NONE" },
-						DiagnosticSignHint  = { bg = "NONE" },
+						DiagnosticSignError              = { bg = "NONE" },
+						DiagnosticSignWarn               = { bg = "NONE" },
+						DiagnosticSignInfo               = { bg = "NONE" },
+						DiagnosticSignHint               = { bg = "NONE" },
 
 						-- 3. GitSigns (Remove Backgrounds)
-						GitSignsAdd    = { bg = "NONE" },
-						GitSignsChange = { bg = "NONE" },
-						GitSignsDelete = { bg = "NONE" },
+						GitSignsAdd                      = { bg = "NONE" },
+						GitSignsChange                   = { bg = "NONE" },
+						GitSignsDelete                   = { bg = "NONE" },
 
 						-- 4. Floating Windows & Borders
-						NormalFloat = { bg = "NONE" },
-						FloatBorder = { bg = "NONE" },
+						NormalFloat                      = { bg = "NONE" },
+						FloatBorder                      = { bg = "NONE" },
 
 						-- 5. Custom / Misc
-						SaveAsRoot = { fg = theme.ui.fg_dim, bg = "NONE" },
+						SaveAsRoot                       = { fg = theme.ui.fg_dim, bg = "NONE" },
+
+						-- 6. Additional Diagnostic Groups (New & Legacy)
+						DiagnosticError                  = { bg = "NONE" },
+						DiagnosticWarn                   = { bg = "NONE" },
+						DiagnosticInfo                   = { bg = "NONE" },
+						DiagnosticHint                   = { bg = "NONE" },
+
+						DiagnosticVirtualTextError       = { bg = "NONE" },
+						DiagnosticVirtualTextWarn        = { bg = "NONE" },
+						DiagnosticVirtualTextInfo        = { bg = "NONE" },
+						DiagnosticVirtualTextHint        = { bg = "NONE" },
+
+						DiagnosticUnderlineError         = { bg = "NONE" },
+						DiagnosticUnderlineWarn          = { bg = "NONE" },
+						DiagnosticUnderlineInfo          = { bg = "NONE" },
+						DiagnosticUnderlineHint          = { bg = "NONE" },
+
+						LspDiagnosticsDefaultError       = { bg = "NONE" },
+						LspDiagnosticsDefaultWarning     = { bg = "NONE" },
+						LspDiagnosticsDefaultInformation = { bg = "NONE" },
+						LspDiagnosticsDefaultHint        = { bg = "NONE" },
 					}
 				end,
 			})

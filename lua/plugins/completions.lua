@@ -134,36 +134,30 @@ return {
 
                 -- Key Mappings
                 mapping = cmp.mapping.preset.insert({
-                    ["<C-k>"]                   = cmp.mapping.select_prev_item(),
-                    ["<C-j>"]                   = cmp.mapping.select_next_item(),
-                    ["<C-b>"]                   = cmp.mapping.scroll_docs(-4),
-                    ["<C-f>"]                   = cmp.mapping.scroll_docs(4),
-                    ["<C-Space>"]               = cmp.mapping.complete(),
-                    ["<C-e>"]                   = cmp.mapping.abort(),
+                    -- 1. Escape Key: To get out of the completeions menu
+                    ["<Esc>"]                   = cmp.mapping.abort(),
 
-                    -- Enter Key: Confirm selection (Select = false means you must manually highlight an item)
+                    -- 2. Enter Key: Confirm selection (Select = false means you must manually highlight an item)
                     ["<CR>"]                    = cmp.mapping.confirm({ select = false }),
 
-                    -- Super-Tab Logic:
+                    -- 3. Tab/Shift-Tab (Navigate > Expand > Jump)
                     ["<Tab>"] = cmp.mapping(function(fallback)
-                        if cmp.visible() then
+                        if cmp.visible() then 
                             cmp.select_next_item()
-                        elseif luasnip.expandable() then
-                            luasnip.expand()
-                        elseif luasnip.expand_or_jumpable() then
+                        elseif luasnip.expand_or_jumpable() then 
                             luasnip.expand_or_jump()
-                        else
-                            fallback()
+                        else 
+                            fallback() 
                         end
                     end, { "i", "s" }),
 
                     ["<S-Tab>"] = cmp.mapping(function(fallback)
-                        if cmp.visible() then
+                        if cmp.visible() then 
                             cmp.select_prev_item()
-                        elseif luasnip.jumpable(-1) then
+                        elseif luasnip.jumpable(-1) then 
                             luasnip.jump(-1)
-                        else
-                            fallback()
+                        else 
+                            fallback() 
                         end
                     end, { "i", "s" }),
                 }),
