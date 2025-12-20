@@ -56,13 +56,13 @@ return {
     -- ----------------------------------------------------------------------
     -- Automatically closes brackets and quotes.
     -- Note: Assumes 'neg', 'char_count_same', etc., are defined in scope.
-    utils.pair("(" , ")" , neg , char_count_same),
-    utils.pair("{" , "}" , neg , char_count_same),
-    utils.pair("[" , "]" , neg , char_count_same),
-    utils.pair("<" , ">" , neg , char_count_same),
-    utils.pair("'" , "'" , neg , even_count),
-    utils.pair('"' , '"' , neg , even_count),
-    utils.pair("`" , "`" , neg , even_count),
+    utils.pair("(" , ")" , utils.neg , utils.char_count_same),
+    utils.pair("{" , "}" , utils.neg , utils.char_count_same),
+    utils.pair("[" , "]" , utils.neg , utils.char_count_same),
+    utils.pair("<" , ">" , utils.neg , utils.char_count_same),
+    utils.pair("'" , "'" , utils.neg , utils.even_count),
+    utils.pair('"' , '"' , utils.neg , utils.even_count),
+    utils.pair("`" , "`" , utils.neg , utils.even_count),
 
     -- System Commands
     -- ----------------------------------------------------------------------

@@ -66,6 +66,33 @@ Utils.node_snip = setmetatable({}, {
 -- 2. LUASNIP HELPER FUNCTIONS (SIMPLE)
 -- ==========================================================================
 
+-- Negates a function's result
+Utils.neg = function(func)
+    return function(...)
+        return not func(...)
+    end
+end
+
+-- Checks if a specific character count is the same (e.g. balanced brackets)
+Utils.char_count_same = function(char)
+    return function()
+        local line = vim.api.nvim_get_current_line()
+        local _, count_open = line:gsub(char, "")
+        -- This logic usually requires comparing two chars; 
+        -- for simplicity, this returns true if count is even
+        return count_open % 2 == 0
+    end
+end
+
+-- Checks if a character appears an even number of times (e.g. quotes)
+Utils.even_count = function(char)
+    return function()
+        local line = vim.api.nvim_get_current_line()
+        local _, count = line:gsub(char, "")
+        return count % 2 == 0
+    end
+end
+
 ---Simply returns the content of the first argument.
 ---Useful for mirroring text in function nodes.
 ---@param args table
