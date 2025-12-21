@@ -58,6 +58,10 @@ return {
 					return {
 						-- 1. Editor UI (Transparency & Splits)
 						LineNr                           = { bg = "NONE" },
+						Cmdline                          = { bg = "NONE" },
+						MsgArea                          = { bg = "NONE" },
+						FloatBorder                      = { bg = "NONE" },
+						Pmenu                            = { bg = "NONE" },
 						CursorLineNr                     = { bg = "NONE" },
 						SignColumn                       = { bg = "NONE" },
 						VertSplit                        = { fg = theme.ui.bg_m3, bg = "NONE" },
@@ -75,6 +79,8 @@ return {
 						GitSignsDelete                   = { bg = "NONE" },
 
 						-- 4. Floating Windows & Borders
+						Normal                           = { bg = "NONE" },
+						NormalNC                         = { bg = "NONE" },
 						NormalFloat                      = { bg = "NONE" },
 						FloatBorder                      = { bg = "NONE" },
 
